@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AuthController {
 
-//    private final AuthService authService;
-//
-//    public AuthController(AuthService authService) {
-//        this.authService = authService;
-//    }
+    private final AuthService authService;
+
+    public AuthController(AuthService authService) {
+        this.authService = authService;
+    }
 
     @Operation(summary = "Generate token on user login")
     @PostMapping("/login")
@@ -51,4 +51,4 @@ public class AuthController {
                 ? ResponseEntity.ok().build()
                 : ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
     }
-}
+    }
